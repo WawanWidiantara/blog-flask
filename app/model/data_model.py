@@ -31,6 +31,4 @@ class Post(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
-        return '<Post {}>'.format(self.title)
-    
-    
+        return "<Post {}>".format(self.title)

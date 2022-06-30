@@ -4,9 +4,6 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
 
-# from flask_cors import CORS
-
-
 app = Flask(__name__)
 # CORS(app)
 app.config.from_object(Config)
@@ -19,10 +16,11 @@ login_manager.init_app(app)
 
 from app.model.data_model import User
 
+
 @login_manager.user_loader
 def load_user(id):
     return User.query.get(int(id))
 
+
 from app.model import data_model
 from app import routes
-
