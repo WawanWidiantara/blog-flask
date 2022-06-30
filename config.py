@@ -16,6 +16,3 @@ class Config(object):
     )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_RECORD_QUERIES = True
-
-    # UPLOAD_FOLDER = str(os.environ.get("UPLOAD_FOLDER"))
-    # MAX_CONTENT_LENGTH = 2 * 1024 * 1024
