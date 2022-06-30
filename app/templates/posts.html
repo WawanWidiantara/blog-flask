@@ -1,0 +1,40 @@
+{% extends "base.html" %} {% block title %}Manage Post{% endblock %} {% block content%}
+<div class="container mt-5 justify-content-center">
+    <h1 class="text-center">{% block header %}Manage Post{% endblock %}</h1>
+    <a class="btn btn-primary mt-5 d-grid mx-auto" type="button" href="/create-post">New Post</a>
+</div>
+<div class="container" id="posts">
+    <div class="card">
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                      <th scope="col">Id</th>
+                      <th scope="col">Post Title</th>
+                      <th scope="col">Manage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for post in posts %}
+                    <tr>
+                        <td>{{post.id}}</td>
+                        <td>{{post.title}}</td>
+                        <td>
+                            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                              <div class="btn-group me-2" role="group" aria-label="Second group">
+                                <a href="/edit-post/{{post.id}}"><button type="button" class="btn btn-secondary btn-warning">Edit</button></a>
+                              </div>
+                              <div class="btn-group" role="group" aria-label="Third group">
+                                <a href="/delete-post/{{post.id}}" onclick="return confirm('Are You Sure to Delete: {{post.title}}?')"><button type="button" class="btn btn-info btn-danger">Delete</button></a>
+                              </div>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% block footer %}
+{% endblock %}{% endblock %}

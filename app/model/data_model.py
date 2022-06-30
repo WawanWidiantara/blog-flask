@@ -27,7 +27,7 @@ class Post(db.Model):
     id = db.Column(db.BigInteger, primary_key=True, autoincrement=True)
     title = db.Column(db.String(30), nullable=False)
     author = db.Column(db.String(50), nullable=False)
-    content = db.Column(db.String(13), nullable=False)
+    content = db.Column(db.Text, nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
