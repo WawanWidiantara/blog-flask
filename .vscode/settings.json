@@ -1,0 +1,6 @@
+{
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.defaultInterpreterPath": "D:\\Web Project\\venv\\Scripts\\python",
+    "python.formatting.provider": "black",
+    "editor.formatOnSave": false
+}
