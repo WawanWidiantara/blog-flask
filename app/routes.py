@@ -14,17 +14,18 @@ from flask import request, flash, redirect, url_for, render_template
 
 
 @app.route("/")
+@app.route("/home")
 @login_required
 def index():
-    return render_template("home.html")
+    return render_template("home.html", user=current_user)
 
 
 @app.route("/posts", methods=["GET", "POST"])
 @login_required
 def posts():
     if request.method == "GET":
-        return PostController.getPost()
-    return render_template("posts.html", user=current_user)
+        posts = PostController.getPost()
+    return render_template("posts.html", user=current_user, posts=posts)
 
 
 @app.route("/create-post", methods=["GET", "POST"])

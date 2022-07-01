@@ -7,7 +7,7 @@ from app import app, db
 def getPost():
     try:
         posts = Post.query.all()
-        return render_template("posts.html", posts=posts)
+        return posts
     except Exception as e:
         print(e)
 
